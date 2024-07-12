@@ -18,7 +18,7 @@
   
   <!-- LOGO CABEÇALHO -->
   <nav class="navbar navbar-expand-lg navbar-light bg-dark p-3">
-    <a href="entrar.html"><img class="" width="170px" src="img/logo-sem-fundo.png" alt="Logo NextMovie"></a>
+    <a href="index.html"><img class="" width="170px" src="img/logo-sem-fundo.png" alt="Logo NextMovie"></a>
     <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -79,7 +79,7 @@
         alert("Todos os campos devem ser preenchidos!");
       } else if (email === "teste@teste.com" && senha === "teste123") {
         localStorage.setItem('usuarioLogado', 'true');
-        window.location.href = 'index.html';
+        window.location.href = 'home.html';
       } else {
         alert("Email ou senha inválidos!");
       }

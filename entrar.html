@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NextMovie</title>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body background="img/tablet.jpg" class="bg-secondary">
+  
+  <!-- LOGO CABEÇALHO -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark p-3">
+    <a href="entrar.html"><img class="" width="170px" src="img/logo-sem-fundo.png" alt="Logo NextMovie"></a>
+    <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+
+  <!-- FORMULÁRIO DE LOGIN -->
+  <div class="container col-3 text-light mt-5 pt-5 pb-5">
+    <div>
+      <div class="row d-flex flex-column justify-content-center align-items-center">
+        <div class="col-3 d-flex flex-column justify-content-center align-items-center">
+          <h1 class="pt-3 display-3">Entrar</h1>
+          <form>
+            <input type="email" name="email" id="email" class="rounded p-3 my-1 px-5" placeholder="Email" required>
+            <input type="password" name="senha" id="senha" class="rounded p-3 my-1 px-5" placeholder="Senha" required>
+            <input type="submit" id="send" value="Entrar" class="btn btn-primary rounded p-2 px-5 float-left my-2">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer pt-5">
+    <footer class="container">
+      <br>
+      <br>
+      <p class="text-light">
+        Developed by Gabriel Dzuman - 2024. © Copyright
+      </p>
+    </footer>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script>
+    // Verificar se o usuário está logado
+    function verificarLogin() {
+      if (!localStorage.getItem('usuarioLogado')) {
+        window.location.href = 'entrar.html';
+      }
+    }
+
+    // Salvar estado de login no localStorage
+    const botao = document.querySelector("#send");
+    botao.addEventListener("click", function(e) {
+      e.preventDefault();
+
+      const emailUsuario = document.querySelector("#email");
+      const email = emailUsuario.value.trim();
+
+      const senhaUsuario = document.querySelector("#senha");
+      const senha = senhaUsuario.value.trim();
+
+      if (email === "" || senha === "") {
+        alert("Todos os campos devem ser preenchidos!");
+      } else if (email === "teste@teste.com" && senha === "teste123") {
+        localStorage.setItem('usuarioLogado', 'true');
+        window.location.href = 'index.html';
+      } else {
+        alert("Email ou senha inválidos!");
+      }
+    });
+  </script>
+</body>
+</html>
